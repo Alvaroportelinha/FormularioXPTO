@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatório de Inspeção</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Importando as bibliotecas de PDF e Excel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -25,16 +28,11 @@
         
         <div class="button-group">
             <button class="btn add" onclick="adicionarMaquina()">➕ Adicionar Máquina</button>
-
-            <!-- Menu suspenso para exportação -->
-            <div class="dropdown">
-                <button class="btn export" onclick="toggleDropdown()">📄 Exportar ▼</button>
-                <div id="export-options" class="dropdown-content">
-                    <button onclick="gerarPDF()">📄 Exportar PDF</button>
-                    <button onclick="gerarExcel()">📊 Exportar Excel</button>
-                </div>
+            <button class="btn export" onclick="toggleDropdown()">📄 Exportar</button>
+            <div id="export-options" class="dropdown-content">
+                <button onclick="gerarPDF()">PDF</button>
+                <button onclick="gerarExcel()">Excel</button>
             </div>
-
             <button class="btn email" onclick="enviarEmail()">📧 Enviar por E-mail</button>
         </div>
     </div>
