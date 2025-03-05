@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Inspeção</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>📋 Relatório de Inspeção</h2>
+        
+        <div class="input-group">
+            <label for="sala">Sala (nº):</label>
+            <input type="text" id="sala" placeholder="Digite o número da sala">
+        </div>
+        
+        <div class="input-group">
+            <label for="operador">Operador (Nome):</label>
+            <input type="text" id="operador" placeholder="Nome do operador">
+        </div>
+        
+        <h3>💻 Máquinas</h3>
+        <div id="maquinas"></div>
+        
+        <div class="button-group">
+            <button class="btn add" onclick="adicionarMaquina()">➕ Adicionar Máquina</button>
+
+            <!-- Menu suspenso para exportação -->
+            <div class="dropdown">
+                <button class="btn export" onclick="toggleDropdown()">📄 Exportar ▼</button>
+                <div id="export-options" class="dropdown-content">
+                    <button onclick="gerarPDF()">📄 Exportar PDF</button>
+                    <button onclick="gerarExcel()">📊 Exportar Excel</button>
+                </div>
+            </div>
+
+            <button class="btn email" onclick="enviarEmail()">📧 Enviar por E-mail</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
